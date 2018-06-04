@@ -16,7 +16,11 @@ class Game
   
   def won?
     WIN_COMBINATIONS.detect {|combo|
+<<<<<<< HEAD
       @board.cells[combo[0]] == @board.cells[combo[1]] && @board.cells[combo[1]] == @board.cells[combo[2]] && @board.taken?(combo[0]+1)}
+=======
+      @board.cells[combo[0]] == @board.cells[combo[1]] && @board.cells[combo[1]] == @board.cells[combo[2]] && @board.taken?(combo[0])}
+>>>>>>> 7116e0e76005b98a1f263880ff50f921947dcddb
   end
   
   def draw?
@@ -31,14 +35,21 @@ class Game
     if won?
       @board.cells[won?[0]]
     else
+<<<<<<< HEAD
       nil
+=======
+>>>>>>> 7116e0e76005b98a1f263880ff50f921947dcddb
     end
   end
   
   def turn
     player = self.current_player
     current_move = player.move(board)
+<<<<<<< HEAD
     if !@board.valid_move?(current_move)
+=======
+    if @board.valid_move?(current_move)
+>>>>>>> 7116e0e76005b98a1f263880ff50f921947dcddb
       turn
     else
       @board.update(current_move, player)
@@ -58,4 +69,8 @@ class Game
       "Cat's Game!"
     end
   end
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7116e0e76005b98a1f263880ff50f921947dcddb
 end
